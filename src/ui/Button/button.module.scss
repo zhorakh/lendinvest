@@ -1,0 +1,16 @@
+@import "../../styles/colors.scss";
+
+.button {
+    outline: none;
+    padding: 10px 22px;
+    cursor: pointer;
+    background-color: $yellow;
+    border: 1px solid $yellowDark;
+    text-transform: uppercase;
+    &:hover {
+        background-color: $yellowDark;
+    }
+    &:disabled {
+        pointer-events: none;
+    }
+}

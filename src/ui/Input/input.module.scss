@@ -1,0 +1,10 @@
+@import "../../styles/colors.scss";
+
+.input {
+    outline: none;
+    height: 36px;
+    border: 1px solid $greyDark;
+    text-align: right;
+    margin-right: 5px;
+    padding: 0 4px;
+}

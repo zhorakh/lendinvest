@@ -1,9 +1,9 @@
-import './input.scss'
+import styles from './input.module.scss'
 
 const Input = (props) => {
     return (
-        <input {...props} className='input' />
+        <input {...props} className={styles.input} />
     )
 }
 
-export default Input;
+export default Input

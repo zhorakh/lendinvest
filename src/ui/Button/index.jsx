@@ -1,9 +1,9 @@
-import './button.scss'
+import styles from './button.module.scss'
 
 const Button = (props) => {
     return (
-        <button {...props} className='button'>{props.children}</button>
+        <button {...props} className={styles.button}>{props.children}</button>
     )
 }
 
-export default Button;
+export default Button

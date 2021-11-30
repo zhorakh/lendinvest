@@ -1,0 +1,33 @@
+@import "../../styles/colors.scss";
+
+.container {
+    background-color: $white;
+    border: 1px solid $greyDark;
+    padding: 15px;
+    margin-bottom: 12px;
+}
+
+.headerWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.title {
+    text-transform: capitalize;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text {
+    font-size: 16px;
+}
+
+.label {
+    color: $green;
+}
