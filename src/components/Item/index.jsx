@@ -13,6 +13,7 @@ const Item = ({ buttonOnClick, data }) => {
                     <div className={styles.label}>Invested</div>
                 )}
             </div>
+            <div>Available amount: <b>{data?.available_amount}</b></div>
             <div className={styles.content}>
                 <p className={styles.text}>
                     {title}

@@ -8,7 +8,7 @@ import styles from './list.module.scss'
 
 const List = () => {
     const [loans, setLoans] = useState([])
-    const [isDisplayedModal, setIsDisplayedModal] = useState(false)
+    const [isVisibleModal, setIsVisibleModal] = useState(false)
     const [activeLoan, setActiveLoan] = useState(null)
 
     useEffect(() => {
@@ -32,11 +32,11 @@ const List = () => {
         }
 
         setActiveLoan(loan)
-        setIsDisplayedModal(true)
+        setIsVisibleModal(true)
     }
 
     const closeModal = () => {
-        setIsDisplayedModal(false)
+        setIsVisibleModal(false)
         setActiveLoan(null)
     }
 
@@ -73,12 +73,15 @@ const List = () => {
                     <span className={styles.boldpsan}>{formatCurrencyToString(totalAmount)}</span>
                 </div>
             </div>
-            <Modal isOpenModal={isDisplayedModal} closeModal={closeModal}>
-                <Content
-                    handleInvest={handleInvest}
-                    activeLoan={activeLoan}
-                />
-            </Modal>
+            {
+                isVisibleModal &&
+                <Modal isVisibleModal={isVisibleModal} closeModal={closeModal}>
+                    <Content
+                        handleInvest={handleInvest}
+                        activeLoan={activeLoan}
+                    />
+                </Modal>
+            }
         </>
     )
 }

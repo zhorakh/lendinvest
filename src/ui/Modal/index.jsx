@@ -1,10 +1,10 @@
 import styles from './modal.module.scss'
 
-const Modal = ({ children, isOpenModal, closeModal  }) => {
+const Modal = ({ children, isVisibleModal, closeModal  }) => {
     return (
-        <div isVisible={ isOpenModal } className={styles.container} style={{ display: isOpenModal ? 'flex' : 'none' }}>
+        <div className={styles.container} style={{ display: isVisibleModal ? 'flex' : 'none' }} data-testid='modal'>
             <div onClick={ closeModal } className={styles.overlay}/>
-            <div className={styles.modal}>{isOpenModal && children}</div>
+            <div className={styles.modal}>{isVisibleModal && children}</div>
         </div>
     )
 }

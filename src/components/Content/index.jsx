@@ -7,14 +7,15 @@ import { formatCurrencyToNumber, formatCurrencyToString, timeRemains } from '../
 
 import styles from './content.module.scss'
 
-const InvestContent = ({ handleInvest, activeLoan }) => {
+const Content = ({ handleInvest, activeLoan }) => {
 
     const [error, setError] = useState(false)
     const [inputValue, setInputValue] = useState('')
     const [currentTime, setCurrentTime] = useState(parseInt(activeLoan.term_remaining))
 
     const timer = () => setCurrentTime(currentTime - 1000)
-     useEffect(
+
+    useEffect(
         () => {
             if (currentTime <= 0) {
                 return
@@ -22,7 +23,7 @@ const InvestContent = ({ handleInvest, activeLoan }) => {
             const id = setInterval(timer, 1000)
             return () => clearInterval(id)
         },
-         [currentTime]
+        [currentTime]
     )
 
     timeRemains(currentTime)
@@ -86,4 +87,4 @@ const InvestContent = ({ handleInvest, activeLoan }) => {
     )
 }
 
-export default InvestContent
+export default Content
