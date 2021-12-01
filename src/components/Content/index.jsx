@@ -77,10 +77,12 @@ const Content = ({ handleInvest, activeLoan }) => {
             </p>
             <p className={styles.text}>Investment amount (£)</p>
             <div className={styles.wrapper}>
-                <Input value={inputValue} placeholder="1,000" onChange={handleInputValue} type="text" error={error} className={styles.input}/>
-                <Button onClick={clickButtonInvest} disabled={error || !inputValue}>
-                    invest
-                </Button>
+                <form onSubmit={clickButtonInvest}>
+                    <Input value={inputValue} placeholder="1,000" onChange={handleInputValue} type="text" error={error} className={styles.input}/>
+                    <Button disabled={error || !inputValue}>
+                        invest
+                    </Button>
+                </form>
                  {error ? (<span className={styles.error}>You can invest only { formatCurrencyToString(availableNumber) }</span>) : null}
             </div>
         </>
